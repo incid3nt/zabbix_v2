@@ -26,7 +26,7 @@
 6. Проверьте что в разделе Latest Data начали появляться данные с добавленных агентов
  Требования к результату
  Результат данного задания сдавайте вместе с заданием 3
-
+![zabbix](https://github.com/incid3nt/zabbix_v2/blob/main/img/chrome_K124TBBwUu.png)
 ```
 Поле для вставки кода...
 ....
@@ -84,3 +84,23 @@
 
 `При необходимости прикрепитe сюда скриншоты
 ![Название скриншота](ссылка на скриншот)`
+скрипт для автоматической установки агента zabbix
+```
+#!/bin/bash
+
+# Устанавливаем репозиторий Zabbix
+wget -qO- https://repo.zabbix.com/zabbix/7.2/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.2+debian12_all.deb | sudo dpkg -i -
+sudo apt-get update
+
+# Устанавливаем Zabbix агент
+sudo apt-get install -y zabbix-agent
+
+# Настраиваем конфигурацию Zabbix агента
+ZABBIX_SERVER_IP="192.168.1.27" # Укажите IP-адрес вашего Zabbix-сервера
+sed -i "s/^Server=.*$/Server=$ZABBIX_SERVER_IP/" /etc/zabbix/zabbix_agentd.conf
+sed -i "s/^ServerActive=.*$/ServerActive=$ZABBIX_SERVER_IP/" /etc/zabbix/zabbix_agentd.conf
+
+# Запускаем и настраиваем автозапуск Zabbix агента
+sudo systemctl restart zabbix-agent
+sudo systemctl enable zabbix-agent
+```
