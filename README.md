@@ -11,7 +11,7 @@
 4. Создайте Item который будет собирать информацию об загрузке RAM в процентах
 
  
-![screen](https://github.com/incid3nt/zabbix_v2/blob/main/img/chrome_ca7MQSFzEq.png)
+
 ---
 
 ### Задание 2
@@ -26,7 +26,7 @@
 6. Проверьте что в разделе Latest Data начали появляться данные с добавленных агентов
  Требования к результату
  Результат данного задания сдавайте вместе с заданием 3
-![zabbix](https://github.com/incid3nt/zabbix_v2/blob/main/img/chrome_K124TBBwUu.png)
+
 
 ### Задание 3
 
