@@ -9,7 +9,7 @@
 2. В веб-интерфейсе Zabbix Servera в разделе Templates создайте новый шаблон
 3. Создайте Item который будет собирать информацию об загрузке CPU в процентах
 4. Создайте Item который будет собирать информацию об загрузке RAM в процентах
-
+![zabbix](https://github.com/incid3nt/zabbix_v2/blob/main/img/chrome_6LGoA7sTnP.png)
  
 
 ---
